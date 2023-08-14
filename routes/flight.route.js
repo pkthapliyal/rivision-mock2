@@ -122,6 +122,76 @@ flightRoute.post("/flights", async (req, res) => {
 
 })
 
+/**
+ * @swagger
+ * /flights/{id}:
+ *   patch:
+ *     summary: Update a flight for the authorized user
+ *     description: Update a book associated with the authorized user using its ID
+ *     tags:
+ *       - Flights
+ *     security:
+ *       - BearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         description: ID of the flight to update
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               flightNo:
+ *                 type: string
+ *               departure:
+ *                 type: string
+ *               arrival:
+ *                 type: string
+ *               departureTime:
+ *                 type: string
+ *               arrivalTime:
+ *                 type: string
+ *               seats:
+ *                 type: integer
+ *               price:
+ *                 type: integer
+ *             required:
+ *               - name
+ *               - flightNo
+ *               - departure
+ *               - arrival
+ *               - departureTime
+ *               - arrivalTime
+ *               - seats
+ *               - price
+ *     responses:
+ *       203:
+ *         description: Book successfully updated
+ *         content:
+ *           application/json:
+ *             example:
+ *               message: Book updated successfully
+ *       401:
+ *         description: Unauthorized - missing or invalid token
+ *         content:
+ *           application/json:
+ *             example:
+ *               error: You are not authorized!
+ * securitySchemes:
+ *   BearerAuth:
+ *     type: http
+ *     scheme: bearer
+ *     bearerFormat: JWT
+ */
+
+
 //  Edit Flight 
 flightRoute.patch("/flights/:id", async (req, res) => {
     try {
