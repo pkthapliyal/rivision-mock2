@@ -2,6 +2,7 @@ const express = require("express");
 const port = 3030;
 const cookiesParser = require("cookie-parser")
 const app = express();
+const cors= require("cors")
 const { connection } = require("./config/db")
 
 //  swagger set-up ;
@@ -39,6 +40,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specification));
 
 app.use(express.json());
 app.use(cookiesParser())
+app.use(cors())
 
 //  routers 
 const { userRoute } = require("./routes/user.route");
