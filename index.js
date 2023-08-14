@@ -18,7 +18,7 @@ const options = {
         },
         servers: [
             {
-                url: "https://air-ticket-booking-ut3u.onrender.com/"
+                url: "https://air-ticket-booking-ut3u.onrender.com/api"
             }
         ],
         components: {
