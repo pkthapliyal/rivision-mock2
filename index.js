@@ -18,7 +18,7 @@ const options = {
         },
         servers: [
             {
-                url: "http://localhost:3030/"
+                url: "https://air-ticket-booking-ut3u.onrender.com/"
             }
         ],
         components: {
