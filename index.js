@@ -35,7 +35,7 @@ const options = {
 };
 
 const specification = swaggerJsdoc(options);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specification));
+app.use("/api/api-docs", swaggerUi.serve, swaggerUi.setup(specification));
 //  middleware
 
 app.use(express.json());
